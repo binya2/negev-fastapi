@@ -26,5 +26,4 @@ async def read_root():
     """
 
 if __name__ == "__main__":
-    # שינוי קריטי: האזנה לכל הכתובות (0.0.0.0) ובפורט 8080 שמתאים ל-OpenShift
     uvicorn.run(app, host="0.0.0.0", port=8080)
