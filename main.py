@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
@@ -18,7 +19,12 @@ async def read_root():
             <div class="card">
                 <h1>שלום כיתת נגב! 🌵</h1>
                 <p>האתר הזה רץ על OpenShift בפרויקט ה-DevOps שלנו.</p>
+                <p>גרסה 2 - עובד!</p>
             </div>
         </body>
     </html>
     """
+
+if __name__ == "__main__":
+    # שינוי קריטי: האזנה לכל הכתובות (0.0.0.0) ובפורט 8080 שמתאים ל-OpenShift
+    uvicorn.run(app, host="0.0.0.0", port=8080)
